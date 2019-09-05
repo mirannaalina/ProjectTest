@@ -1,0 +1,94 @@
+[Propunere aplicatie, Marinela]
+
+Model
+		Student - Olimpia, Ariana, Simona
+		Grupa - Catalin, Laurentiu
+		Mesaj - Eve, Geta, Andrei
+		Profesor - Adrian, Ciprian
+		Orar - Iulian, Catalin Dan
+	Locatie - Ciprian, Bogdan
+		Materie - Alina, Florin
+
+Student
+	Nume - text, obligatoriu
+	Prenume - text, obligatoriu
+	Email - text, obligatoriu, validare format si unicitate
+	Data_nasterii - data, obligatoriu
+	Telefon - text, validare format
+	Grupa - numeric, intre 1 si 10. Reprezinta grupa din care face parte studentul
+
+Grupa
+	IdGrupa - numeric,obligatoriu intre 1 si 10.
+	An - obligatoriu intre 1 si 6. Reprezinta anul din care face parte grupa.
+	Studenti - lista de studenti
+	Mesaje- lista de mesaje asociate grupei
+
+Profesor 
+	Nume - text, obligatoriu
+	Prenume - text, obligatoriu
+	Email - text, obligatoriu, validare format
+	Telefon - text, validare format
+	Grad - lista, obligatoriu, Grade possible: profesor, asistent, laborant
+	Anul_angajarii - numeric, obligatoriu >1970
+	Activ - boolean, obligatoriu, Indica daca profesorul este activ si poate fi alocat pentru cursuri
+	Materii - lista de materii predate
+
+Materie
+	Denumire - text, obligatoriu
+	Prescurtare - text, obligatoriu. Denumirea scurta a materiei
+	Detalii - text, obligatoriu, maxim 100 caractere. Detalii despre continutul cursului / seminarului
+	Profesori - lista de profesori care pot preda materia curenta
+
+Locatie
+	Denumire - text, obligatoriu, maxim 5 caractere
+	Capacitate - numeric, obligatoriu, Numarul de locuri disponibile, intre 50 -300 locuri
+	Activa -  boolean, obligatoriu, Este activa sau nu
+	Adresa - text, obligatoriu
+
+Orar 
+	Grupa -  obligatoriu
+	Profesor - obligatoriu
+	Locatie - obligatoriu
+	Data - data, obligatoriu
+	Ora_inceput - text, obligatoriu
+	Ora_sfarsit - text, obligatoriu
+	Detalii - text, obligatoriu, Detalii optionale despre curs
+	Materie - obligatoriu
+
+Mesaj 
+	Student - obligatoriu, Studentul care a transmis mesajul
+	Timp - data si timpul, obligatoriu. Timpul exact la care a fost transmis cu precizie cat mai mare (e.g. milisecunde). Precizia este necesara pentru ordonare cronologica.
+	Text - text, obligatoriu. textul mesajului
+	Grupa - obligatoriu, grupa unde a fost transmis mesajul
+	
+	
+Adaugare clase de model - Deadline 13.09.2019
+Adaugare interfete (contracte) pentru functionalitate
+Adaugare date de intrare, putem folosi chiar un fisier csv din care sa citim datele initial
+Salvare intr-un fisier (txt sau altceva) un orar pentru o saptamana pentru o anumita grupa
+Calculeaza numarul total de studenti inscrisi in toate grupele
+Salveaza cate un fisier pentru fiecare grupa, in care sa fie salvate toate mesajele in ordine cronologica 
+Calculeaza numarul de profesori care s-au angajat dupa anul 2000
+Salveaza intr-un fisier toate locatiile active unde se tin cursuri
+Grupeaza toti profesorii in functie de gradul pe care il au: profesor, asistent, laborant
+Sorteaza studentii in functie de data nasterii
+Salveaza un fisier pentru fiecare grupa cu lista tuturor studentilor aferenta fiecarei grupe.
+Salveaza intr-un fisier toti profesorii care predau mai multe materii, inclusiv enumerare materiilor
+Sorteza lista locatiilor in functie de nr de locuri disponibile
+Etc
+Discutie la clasa in 9.sept.2019
+Pentru primele 2 cerinte, am creat echipe de cate 2 sau 3
+Cand finalizam primele 2 cerinte, facem grupe noi ca sa lucram pentru urmatoarele cerinte
+Aici am creat GIT repository:
+https://github.com/OlimpiaBalaci/java_firstapp_maven
+! De cate ori modificati sa dati Commit si Push
+
+Hints:
+- cream clasa de tipul respectiv
+- cand introducem date cu new in set sa facem validarea
+- lista de studenti
+- lasam codul cu rosu unde depindem de altceva si cel care are ex. grupa si face commi,t trebuie sa mearga codul
+validarea o putem face chiar daca e cu rosu
+la Profesor - facem enum la Grad de ex.
+
+
